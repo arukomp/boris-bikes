@@ -1,6 +1,6 @@
-## Boris Bikes ##
+# Boris Bikes #
 
-## User Stories ##
+# User Stories #
 
 ```As a person,
 So that I can use a bike,
@@ -10,7 +10,7 @@ As a person,
 So that I can use a good bike,
 I'd like to see if a bike is working```
 
-# Functional representation of the user stories
+## Functional representation of the user stories ##
 
 Objects  | Messages
 ------------- | -------------
