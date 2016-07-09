@@ -15,4 +15,18 @@ describe Garage do
 
   end
 
+  describe '#release_bikes' do
+
+    it { is_expected.to respond_to(:release_bikes) }
+
+    let(:bike) { double("bike", fix: true) }
+    let(:bikes) { [ bike, bike ] }
+    it 'releases fixed bikes' do
+      subject.dock(bikes)
+      expect(subject.release_bikes).to eq bikes
+      expect(subject.bikes).to eq []
+    end
+
+  end
+
 end

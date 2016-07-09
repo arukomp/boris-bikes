@@ -17,6 +17,10 @@ class DockingStation
     @bikes.pop
   end
 
+  def release_broken
+    @broken_bikes.pop(@broken_bikes.count)
+  end
+
   def dock(bike)
     raise 'Capacity full' if full?
     accept_bike(bike)
