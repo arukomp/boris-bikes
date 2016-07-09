@@ -1,18 +1,10 @@
 class Garage
-  attr_reader :bikes
-  DEFAULT_CAPACITY = 20
-
-  def initialize
-    @bikes = []
-  end
+  include BikeContainer
 
   def dock(bikes)
-    @bikes.concat(bikes).flatten
+    raise 'Capacity full' if full?
+    [bikes].flatten.each { |bike| @bikes << bike }
     fix_bikes
-  end
-
-  def release_bikes
-    @bikes.pop(@bikes.count)
   end
 
   private
