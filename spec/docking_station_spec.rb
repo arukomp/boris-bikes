@@ -6,7 +6,7 @@ describe DockingStation do
 
   describe '#release_bike' do
     
-    let(:bike) { Bike.new }
+    let(:bike) { double(:bike) }
     let(:broken_bike) { double("broken_bike", broken?: true) }
     
     it { is_expected.to respond_to(:release_bike) }
@@ -34,7 +34,7 @@ describe DockingStation do
   
   describe '#dock' do
     
-    let(:bike) { Bike.new }
+    let(:bike) { double(:bike) }
     
     it { is_expected.to respond_to(:dock).with(1).argument }
     
