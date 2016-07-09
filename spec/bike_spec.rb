@@ -4,7 +4,13 @@ describe Bike do
 
   it 'can be reported broken' do
     subject.report_broken
-    expect(subject).to be_broken      # => broken?
+    expect(subject).to be_broken
+  end
+
+  it 'can be fixed' do
+    subject.report_broken
+    expect(subject.fix).to eq true
+    expect(subject).to_not be_broken
   end
 
 end

@@ -1,4 +1,6 @@
 require_relative 'bike'
+require_relative 'van'
+require_relative 'garage'
 
 class DockingStation
   attr_reader :capacity
@@ -23,7 +25,7 @@ class DockingStation
   private
 
   attr_reader :bikes
-  
+
   def full?
     @bikes.count + @broken_bikes.count >= DEFAULT_CAPACITY
   end
@@ -31,7 +33,7 @@ class DockingStation
   def empty?
     @bikes.empty?
   end
-  
+
   def accept_bike(bike)
     bike.broken? ? @broken_bikes << bike : @bikes << bike
   end
